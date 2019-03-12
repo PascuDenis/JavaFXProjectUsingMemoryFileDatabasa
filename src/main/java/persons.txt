@@ -1,0 +1,5 @@
+1,Peter,Johnson,Klausenburg,Entwickler,3,12.500000,8
+2,Maria,Meyer,Munich,Entwickler,2,14.500000,6
+3,Georg,Yuruz,Stuttgart,Tester,1,7.500000,8
+4,Marcel,Hewitt,London,TeamLeader,4,20.000000,8
+5,Nicole,Schwarz,Paris,ProjectManager,1,18.500000,8

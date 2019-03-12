@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="center" hgap="10" prefHeight="727.0" prefWidth="1098.0" vgap="10" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.GUIMainpage">
+   <columnConstraints>
+      <ColumnConstraints maxWidth="0.0" minWidth="0.0" prefWidth="0.0" />
+      <ColumnConstraints maxWidth="1125.0" minWidth="1125.0" prefWidth="1125.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <BorderPane prefHeight="593.0" prefWidth="963.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+         <top>
+            <VBox prefHeight="66.0" prefWidth="1159.0" BorderPane.alignment="CENTER">
+               <children>
+                  <MenuBar prefHeight="25.0" prefWidth="1156.0">
+                    <menus>
+                      <Menu mnemonicParsing="false" text="File">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="Close" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Edit">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="Delete" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Help">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="About" />
+                        </items>
+                      </Menu>
+                    </menus>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets left="-10.0" />
+                     </VBox.margin>
+                  </MenuBar>
+                  <Label prefHeight="34.0" prefWidth="1134.0" text="   (._.) ( l: ) ( .-. ) ( :l ) (._.) ( l: ) ( .-. ) ( :l ) (._.) ( l: ) ( .-. ) ( :l ) (._.) ( l: ) ( .-. ) ( :l ) (._.) ( l: ) ( .-. ) ( :l ) (._.)( l: ) ( .-. ) ( :l ) (._.)">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="-10.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+         </top>
+         <bottom>
+            <HBox BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Label" />
+               </children>
+               <padding>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </padding>
+            </HBox>
+         </bottom>
+         <center>
+            <AnchorPane prefHeight="640.0" prefWidth="924.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TableView fx:id="mainTableView" layoutX="27.0" prefHeight="346.0" prefWidth="806.0" AnchorPane.bottomAnchor="294.0" AnchorPane.leftAnchor="27.0" AnchorPane.rightAnchor="27.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn id="idTableColumn" fx:id="idColumn" minWidth="50.0" prefWidth="55.0" text="ID" />
+                      <TableColumn id="nachNameTableColumn" fx:id="lastNameColumn" minWidth="70.0" prefWidth="85.0" text="Last Name" />
+                        <TableColumn id="vorNameTableColumn" fx:id="firstNameColumn" minWidth="70.0" prefWidth="85.0" text="First Name" />
+                        <TableColumn id="addresseTableColumn" fx:id="addressColumn" minWidth="150.0" prefWidth="279.0" text="Address" />
+                        <TableColumn id="berufPositionTableColumn" fx:id="positionColumn" minWidth="55.0" prefWidth="75.0" text="Position" />
+                        <TableColumn id="erfahrungsNiveauTableColumn" fx:id="levelColumn" minWidth="55.0" prefWidth="75.0" text="Level" />
+                        <TableColumn id="stundenLohnTableColumn" fx:id="paymentColumn" minWidth="70.0" prefWidth="75.0" text="Payment/h" />
+                        <TableColumn id="stundenProTagTableColumn" fx:id="dailyHourColumn" minWidth="70.0" prefWidth="75.0" text="Daily hours" />
+                    </columns>
+                  </TableView>
+                  <HBox layoutX="30.0" layoutY="360.0" prefHeight="27.0" prefWidth="351.0">
+                     <children>
+                        <RadioButton fx:id="showMemoryListRadioButton" mnemonicParsing="false" onAction="#printMitarbeiterList" text="Show Memory" toggleGroup="$showData">
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="showData" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="showFileListRadioButton" mnemonicParsing="false" onAction="#printMitarbeiterList" text="Show File" toggleGroup="$showData">
+                           <HBox.margin>
+                              <Insets left="30.0" top="5.0" />
+                           </HBox.margin>
+                        </RadioButton>
+                        <RadioButton fx:id="showDatabaseListRadioButton" layoutX="138.0" layoutY="15.0" mnemonicParsing="false" onAction="#printMitarbeiterList" text="Show Database" toggleGroup="$showData">
+                           <HBox.margin>
+                              <Insets left="30.0" top="5.0" />
+                           </HBox.margin>
+                        </RadioButton>
+                     </children>
+                  </HBox>
+                  <TextArea fx:id="showFileTextArea" layoutX="663.0" layoutY="423.0" prefHeight="187.0" prefWidth="248.0" text="Hello there (づ｡◕‿‿◕｡)づ&#10;Hello there (づ｡◕‿‿◕｡)づ&#10;Hello there (づ｡◕‿‿◕｡)づ" AnchorPane.topAnchor="423.0" />
+                  <VBox layoutX="469.0" layoutY="423.0" prefHeight="147.0" prefWidth="145.0">
+                     <children>
+                        <Label prefHeight="34.0" prefWidth="160.0" text="Calculate salary for">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                        <ComboBox fx:id="salaryPositionComboBox" onAction="#positionButton" onDragDetected="#positionButton" prefHeight="25.0" prefWidth="127.0" promptText="Position">
+                           <VBox.margin>
+                              <Insets right="10.0" />
+                           </VBox.margin>
+                        </ComboBox>
+                        <ComboBox fx:id="salaryLevelComboBox" onAction="#levelButton" prefHeight="25.0" prefWidth="127.0" promptText="Level">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </ComboBox>
+                        <Button fx:id="salaryEveryoneButton" layoutX="10.0" layoutY="35.0" mnemonicParsing="false" onAction="#everyoneButton" prefHeight="25.0" prefWidth="65.0" text="Everyone">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <Button fx:id="refreshTableButton" layoutX="839.0" layoutY="361.0" mnemonicParsing="false" onAction="#refrashTable" prefHeight="25.0" prefWidth="72.0" text="Refresh" />
+               </children>
+            </AnchorPane>
+         </center>
+         <left>
+            <AnchorPane prefHeight="640.0" prefWidth="154.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox layoutX="-7.0" prefHeight="640.0" prefWidth="194.0">
+                     <children>
+                        <TextField fx:id="idTextField" promptText="Id">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="firstNameTextField" prefHeight="6.0" prefWidth="174.0" promptText="First Name">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <VBox.margin>
+                              <Insets left="10.0" top="5.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="lastNameTextField" layoutX="20.0" layoutY="45.0" promptText="Last Name">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <VBox.margin>
+                              <Insets left="10.0" top="5.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="addressTextField" layoutX="20.0" layoutY="45.0" promptText="Address">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <VBox.margin>
+                              <Insets left="10.0" top="5.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <ComboBox fx:id="positionComboBox" onAction="#positionSelectionChanged" prefWidth="174.0" promptText="Position">
+                           <VBox.margin>
+                              <Insets left="10.0" top="5.0" />
+                           </VBox.margin>
+                        </ComboBox>
+                        <TextField fx:id="levelTextField" layoutX="10.0" layoutY="95.0" promptText="Level">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <VBox.margin>
+                              <Insets left="10.0" top="5.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="paymentTextField" layoutX="10.0" layoutY="120.0" promptText="Payment/h">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <VBox.margin>
+                              <Insets left="10.0" top="5.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <ComboBox fx:id="dailyHoursComboBox" onAction="#dailyHoursSelectionChangeed" prefWidth="174.0" promptText="Daily hours">
+                           <VBox.margin>
+                              <Insets left="10.0" top="5.0" />
+                           </VBox.margin>
+                        </ComboBox>
+                        <ButtonBar minWidth="150.0" prefHeight="47.0" prefWidth="204.0">
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="-10.0" top="15.0" />
+                           </VBox.margin>
+                           <buttons>
+                            <Button fx:id="addButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="15.0" mnemonicParsing="false" onAction="#addButton" prefHeight="25.0" prefWidth="111.0" text="Add ">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </Button>
+                              <Button fx:id="deleteButton" minWidth="60.0" mnemonicParsing="false" onAction="#deleteButton" prefHeight="25.0" text="Delete" />
+                           </buttons>
+                        </ButtonBar>
+                        <ButtonBar layoutY="255.0" minWidth="150.0" prefHeight="19.0" prefWidth="194.0">
+                           <buttons>
+                              <Button fx:id="updateButton" minWidth="60.0" mnemonicParsing="false" onAction="#updateButton" prefHeight="25.0" prefWidth="88.0" text="Update" />
+                           </buttons>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </ButtonBar>
+                        <RadioButton fx:id="saveInMemoryRadioButton" mnemonicParsing="false" text="Use Memory">
+                           <VBox.margin>
+                              <Insets left="10.0" top="25.0" />
+                           </VBox.margin>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="toggleGroup" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="saveInFileRadioButton" mnemonicParsing="false" text="Use File" toggleGroup="$toggleGroup">
+                           <padding>
+                              <Insets left="10.0" top="5.0" />
+                           </padding>
+                        </RadioButton>
+                        <RadioButton fx:id="saveInDatabaseRadioButton" layoutX="10.0" layoutY="394.0" mnemonicParsing="false" text="Use Database" toggleGroup="$toggleGroup">
+                           <padding>
+                              <Insets left="10.0" top="5.0" />
+                           </padding>
+                        </RadioButton>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </left>
+      </BorderPane>
+   </children>
+</GridPane>
